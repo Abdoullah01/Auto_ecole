@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}accueil{% endblock title %} </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#" style="text-transform: uppercase;">Admin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link " href="#" style="text-transform: uppercase;">Accueil <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-transform: uppercase;">Inscription</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-transform: uppercase;">Cours en ligne</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="text-transform: uppercase;">contactez-nous</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock content %}
+    <!-- contenu -->
+    <div class="container">
+        <h1 id="domaine" style="margin-top: 8px; text-align: center; text-shadow: 0 0 2px; border-radius: 20px;padding: 5px 15px;box-shadow: 0 0 15px rgba(0, 0, 0, .2);">Nos permis</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Permis A</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero, repellendus molestiae
+                    accusamus alias quidem! Autem maiores eum omnis laboriosam impedit, quia numquam architecto suscipit
+                    deleniti, cupiditate perspiciatis asperiores nihil!</p>
+                <p><a href="#" class="btn btn-secondary" role="button">Savoir plus...&raquo;</a></p>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Permis B</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero, repellendus molestiae
+                    accusamus alias quidem! Autem maiores eum omnis laboriosam impedit, quia numquam architecto suscipit
+                    deleniti, cupiditate perspiciatis asperiores nihil!</p>
+                <p><a href="#" class="btn btn-secondary" role="button">Savoir plus...&raquo;</a></p>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Permis AB</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates libero, repellendus molestiae
+                    accusamus alias quidem! Autem maiores eum omnis laboriosam impedit, quia numquam architecto suscipit
+                    deleniti, cupiditate perspiciatis asperiores nihil!</p>
+                <p><a href="#" class="btn btn-secondary" role="button">Savoir plus...&raquo;</a></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- fin contenu -->
+
+ <!-- Début footer -->
+ <footer class="container-f" style="box-shadow: 0 0 15px rgba(0, 0, 0, .1);  background: #ccc; margin-top: 10px; text-align: center;">
+    <p><strong>&copy;  2020-2021|Tous les droits réservés</strong></p>
+</footer>
+<!-- Fin footer -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
