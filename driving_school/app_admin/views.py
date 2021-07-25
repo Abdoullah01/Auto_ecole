@@ -13,18 +13,18 @@ def dashboard(request):
     return render(request, 'app_admin/db.html')
 
 login_required
-def user_articles(request):
+def user_eleves(request):
     has_perm = False
-    if request.user.has_perm("blog.delete_article"):
+    if request.user.has_perm("schoolDrive.delete_eleve"):
         has_perm = True
-    list_articles = Personne.objects.filter(user = request.user)
-    return render(request, 'app_admin/my-articles.html', {'list_articles':list_articles, "has_perm":has_perm})
+    list_eleves = Personne.objects.filter()
+    return render(request, 'app_admin/eleve.html', {'list_eleves':list_eleves, "has_perm":has_perm})
 
-class AddArticle(LoginRequiredMixin,CreateView):
+class AddPersonne(LoginRequiredMixin,CreateView):
     model = Personne
     form_class = PersonneForm
-    template_name = "app_admin/add-article.html"
-    success_url = "my-articles"
+    template_name = "app_admin/add-eleve.html"
+    success_url = "eleve"
     
 
     def form_valid(self, form):
@@ -35,15 +35,15 @@ class AddArticle(LoginRequiredMixin,CreateView):
 class UpdateArticle(LoginRequiredMixin,UpdateView):
     model = Personne
     form_class = PersonneForm
-    template_name = 'app_admin/article_form.html'
+    template_name = 'app_admin/eleve_form.html'
     
     
     
 class DeleteArticle(DeleteView):
     model = Personne
-    success_url = "/app-admin/my-articles"
+    success_url = "/app-admin/eleve"
 
 def dispatch(self, request, *args, **kwargs):
-    if not request.user.has_perm("blog.delete_article"):
+    if not request.user.has_perm("schoolDrive.delete_eleve"):
         raise PermissionDenied
     return super().dispatch(request, *args, **kwargs)

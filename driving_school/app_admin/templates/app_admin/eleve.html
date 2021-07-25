@@ -3,14 +3,14 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-12 text-center">
-            <h2>Mes articles</h2>
+        <div class="col-md-12 text-center" style="margin-bottom: 5px;">
+            <h2>Mes élèves</h2>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12" style="margin-bottom: 8px;">
             <a href="{% url 'ajouter-eleve' %}" class="btn btn-secondary" style="float: right;"><i class="fas fa-user-plus"></i>Ajouter</a>
         </div>
         <div class="col-md-12">
-            {% if list_articles %}
+            {% if list_eleves %}
             <div class="card">
                 <div class="card-body">
                     <table class="table table-hover">
@@ -27,14 +27,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for article in list_articles %}
+                            {% for eleve in list_eleves %}
                             <tr>
-                                <td class="h6"><a href="#" >{{article}}</a></td>
-                                <td class="h6"><a href="#" >{{article.desc}}</a></td>
+                                <td class="h6">{{eleve.nom}}</td>
+                                <td class="h6">{{eleve.prenom}}</td>
+                                <td class="h6">{{eleve.date_naissance}}</td>
+                                <td class="h6">{{eleve.sexe}}</td>
+                                <td class="h6">{{eleve.adresse}}</td>
+                                <td class="h6">{{eleve.email}}</td>
+                                <td class="h6">{{eleve.telephone}}</td>
                                 <td>
-                                    <a href="{% url 'update-article' article.pk %}" class="btn btn-info btn-sm" ><i class="fas fa-edit"></i></a>
+                                    <a href="{% url 'update-eleve' eleve.pk %}"><button style="padding: 2px;" type="button" class="btn btn-info">Modifier</button></a>
                                     {% if has_perm %}
-                                    <a href="{% url 'delete-article' article.pk %}" class="btn btn-danger btn-sm "><i class="fas fa-trash"></i></a>
+                                    <a href="{% url 'delete-eleve' eleve.pk %}"><button style="padding: 2px;" type="button" class="btn btn-danger">Supprimer</button></a>
                                     {% endif %}
                                 </td>
                             </tr>
@@ -44,7 +49,7 @@
                 </div>
             </div>
             {% else %}
-            <h3> Vous n'avez aucun article</h3>
+            <h3> Vous n'avez aucun élève</h3>
             {% endif%}
         </div>
     </div>

@@ -15,13 +15,13 @@
         <div class="card">
             <div class="card-header text-center"><i class="fas fa-user">Connexion</i></div>
             <div class="card-body">
-                <label for="id_email">E-mail</label>
-                {% if form.email.errors %}
-                {% for error in form.email.errors  %}
-                <div class="div-error-{{form.email.name}}"><small class="text-danger">{{error}}</small></div>
+                <label for="id_username">Nom d'utilisateur</label>
+                {% if form.username.errors %}
+                {% for error in form.username.errors  %}
+                <div class="div-error-{{form.username.name}}"><small class="text-danger">{{error}}</small></div>
                 {% endfor %}
                 {% endif %}
-                {{form.email}}
+                {{form.username}}
 
                 <label for="id_pwd">Mot de passe</label>
                 {% if form.pwd.errors %}

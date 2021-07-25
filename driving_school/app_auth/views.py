@@ -9,7 +9,7 @@ def login_blog(request):
     if request.method == "POST":
         form = LoginForm(request.POST)
         if form.is_valid():
-            username = form.cleaned_data['email']
+            username = form.cleaned_data['username']
             pwd = form.cleaned_data['pwd']
             user = authenticate(username = username, password = pwd)
             if user is not None:
