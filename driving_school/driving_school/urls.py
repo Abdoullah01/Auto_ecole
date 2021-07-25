@@ -19,4 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('schoolDrive/', include('schoolDrive.urls')),
+    path('app_auth/', include('app_auth.urls')),
+        path('app_admin/', include('app_admin.urls'))
+
 ]

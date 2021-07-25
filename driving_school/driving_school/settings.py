@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'schoolDrive',
+    'app_auth',
+    'app_admin',
 ]
 
 MIDDLEWARE = [

@@ -8,8 +8,10 @@ class Personne(models.Model):
     prenom = models.CharField(max_length=50)
     date_naissance = models.DateField()
     sexe = models.CharField(max_length=15)
-    adresse = models.IntegerField()
+    adresse = models.CharField(max_length=30)
     email = models.EmailField()
+    telephone = models.IntegerField()
+    
     
     def __str__(self):
         return self.nom
