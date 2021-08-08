@@ -1,7 +1,6 @@
 from django import forms
 from .models import Personne
 
-choix = ['Femme', 'Homme']
 
 class PersonneForm(forms.ModelForm):
     class Meta:
@@ -12,8 +11,8 @@ class PersonneForm(forms.ModelForm):
             'nom': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Votre nom...'}),
             'prenom': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Votre prénom...'}),
             'date_naissance': forms.DateInput(attrs={'class':'form-control', 'type':'date', 'placeholder':'Votre date de naissance...'}),
-            'sexe': forms.Select(attrs=None, choices = choix),
-            'adesse': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Rue...'}),
+            'sexe': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Votre sexe...'}),
+            'adresse': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Rue...'}),
             'email': forms.EmailInput(attrs={'class':'form-control', 'placeholder':'Votre e-mail...'}),
             'telephone': forms.NumberInput(attrs={'class':'form-control', 'placeholder':'Votre téléphone...'}),
 

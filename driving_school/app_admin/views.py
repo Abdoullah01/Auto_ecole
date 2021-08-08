@@ -17,7 +17,7 @@ def user_eleves(request):
     has_perm = False
     if request.user.has_perm("schoolDrive.delete_eleve"):
         has_perm = True
-    list_eleves = Personne.objects.filter()
+    list_eleves = Personne.objects.filter(user = request.user)
     return render(request, 'app_admin/eleve.html', {'list_eleves':list_eleves, "has_perm":has_perm})
 
 class AddPersonne(LoginRequiredMixin,CreateView):
